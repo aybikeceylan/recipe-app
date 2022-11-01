@@ -15,15 +15,15 @@ const Home = () => {
     const getData = async () => {
         try {
             const data = await axios(url)
-            console.log(data)
+            const { data: { hits } } = data
+            console.log(hits)
+            if (!hits) {
+                <h1>Loading</h1>
+            }
+            setRecipes(hits)
         } catch (error) {
             console.log(error)
         }
-
-
-        getData()
-
-
 
     }
 
@@ -31,7 +31,7 @@ const Home = () => {
     return (
         <div className="Home">
             <Header />
-            <Main />
+            <Main query={query} setQuery={setQuery} setMeal={setMeal} getData={getData} recipes={recipes} />
         </div>
     )
 }
