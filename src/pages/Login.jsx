@@ -40,19 +40,6 @@ const Login = ({ user, setUser }) => {
                         onChange={(e) => setPass(e.target.value)}
                         required
                     />
-                </div>
-                <div className="w-[80%]">
-                    <p className="text-start font-bold indent-2">
-                        Password
-                    </p>
-                    <input
-                        type="password"
-                        placeholder="Enter Your Pasword"
-                        className="w-[90%] rounded-md indent-2 h-8"
-                        value={pass}
-                        onChange={(e) => setPass(e.target.value)}
-                        required
-                    />
                     <div className="w-full d-flex justify-content-center align-items-center m-3 ">
                         <button className=" w-[50%] bg-gray-800 text-white rounded-md p-1 "
                             onClick={handleClick}
